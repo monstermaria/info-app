@@ -18,11 +18,11 @@ function getCity() {
     if (city === "london") {
         getWeather(city);
     } else if (city === "paris") {
-        document.getElementById("test").innerHTML = "your choise: Paris (test)";
+        document.getElementById("test").innerHTML = "your choice: Paris (test)";
     } else if (city === "copenhagen") {
-        document.getElementById("test").innerHTML = "your choise: Copenhagen (test)";
+        document.getElementById("test").innerHTML = "your choice: Copenhagen (test)";
     } else if (city === "stockholm") {
-        document.getElementById("test").innerHTML = "your choise: Stockholm (test)";
+        document.getElementById("test").innerHTML = "your choice: Stockholm (test)";
     }
 }
 
