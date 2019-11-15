@@ -26,11 +26,14 @@ function getCity() {
     }
 }
 
-// var city = "london";
 // Function that gets weather data from openweathermap
 function getWeather(city) {
-	var weatherData = "There will be a call to openweathermap";
-	$("#weather").text(weatherData);
+    var weatherData = $.ajax("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=fc2cef4d05e5acca0565daf50456a1af");
+    weatherData.then(() => {
+        // console.log("In then", weatherData);
+        $("#weather").text(weatherData.responseText);
+    });
+    console.log(weatherData);
 }
 
 
