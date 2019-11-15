@@ -16,7 +16,7 @@ function getCity() {
     // There will be function som gets weather for London
     // I wrote only tests for checking 
     if (city === "london") {
-        document.getElementById("test").innerHTML = "your choise: London (test)";
+        getWeather(city);
     } else if (city === "paris") {
         document.getElementById("test").innerHTML = "your choise: Paris (test)";
     } else if (city === "copenhagen") {
@@ -30,7 +30,7 @@ function getCity() {
 // Function that gets weather data from openweathermap
 function getWeather(city) {
 	var weatherData = "There will be a call to openweathermap";
-	$("weather").text(weatherdata);
+	$("#weather").text(weatherData);
 }
 
 
