@@ -10,22 +10,26 @@ presents it in their corresponding divs on the homepage
 
 
 // Function to read input and call other functions that collect data
-function getTown() {
+function getCity() {
     'use strict';
-    var town = $("#town").val();
-    // here will be function som gets weather for London
+    var city = $("#city").val();
+    // There will be function som gets weather for London
     // I wrote only tests for checking 
-    if (town === "london") {
-        document.getElementById("info").innerHTML = "your choise: London (test)";
-    } else if (town === "paris") {
-        document.getElementById("info").innerHTML = "your choise: Paris (test)";
+    if (city === "london") {
+        document.getElementById("test").innerHTML = "your choise: London (test)";
+    } else if (city === "paris") {
+        document.getElementById("test").innerHTML = "your choise: Paris (test)";
+    } else if (city === "copenhagen") {
+        document.getElementById("test").innerHTML = "your choise: Copenhagen (test)";
+    } else if (city === "stockholm") {
+        document.getElementById("test").innerHTML = "your choise: Stockholm (test)";
     }
 }
 
 // var city = "london";
 // Function that gets weather data from openweathermap
 function getWeather(city) {
-	var weatherData = "Here there will be a call to openweathermap";
+	var weatherData = "There will be a call to openweathermap";
 	$("weather").text(weatherdata);
 }
 
@@ -34,4 +38,4 @@ function getWeather(city) {
 
 
 
-$("#search-button").click(getTown);
+$("#search-button").click(getCity);
