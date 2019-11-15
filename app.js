@@ -22,9 +22,12 @@ function getTown() {
     }
 }
 
-
+// var city = "london";
 // Function that gets weather data from openweathermap
-
+function getWeather(city) {
+	var weatherData = "Here there will be a call to openweathermap";
+	$("weather").text(weatherdata);
+}
 
 
 // Function that reads JSON data from file
