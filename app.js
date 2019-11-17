@@ -28,8 +28,9 @@ function getCity() {
 
 // Function that gets weather data from openweathermap
 function getWeather(city) {
+    'use strict';
     var weatherData = $.ajax("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=fc2cef4d05e5acca0565daf50456a1af");
-    weatherData.then(function() {
+    weatherData.then(function () {
         // console.log("In then", weatherData);
         $("#weather").text(weatherData.responseText);
     });
@@ -39,33 +40,22 @@ function getWeather(city) {
 
 // Function that reads JSON data from file
 function moreInfo(city) {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("test").innerHTML = this.responseText;
-    }
-  };
-  xhttp.open("GET", "info.json", true);
-  xhttp.send();
+    'use strict';
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+            document.getElementById("test").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "info.json", true);
+    xhttp.send();
 
 //var moreInfo = fs.readFile("info.json");
     // data is a JavaScript object now. Handle it as such
-};
+}
 
- moreInfo();
+moreInfo();
 
 $("#search-button").click(getCity);
-
-
-
-
-
-
-
-
-
-
-
-
 
 
