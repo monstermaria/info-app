@@ -32,9 +32,17 @@ function getWeather(city) {
     var weatherData = $.ajax("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=fc2cef4d05e5acca0565daf50456a1af");
     weatherData.then(function () {
         // console.log("In then", weatherData);
-        $("#weather").text(weatherData.responseText);
+        //$("#weather").text(weatherData.responseText);
+        sendWeather(weatherData.responseJSON);
     });
     console.log(weatherData);
+}
+
+function sendWeather(weatherDataJSON) {
+    'use strict';
+    console.log(weatherDataJSON);
+    //var weatherObject = JSON.parse(weatherDataJSON);
+    document.getElementById("weather").innerHTML = weatherDataJSON.main.temp;
 }
 
 
