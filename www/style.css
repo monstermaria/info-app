@@ -8,16 +8,8 @@ body {
 }
 
 .containter{
-    position: relative;
-    max-width: 1000px;
-    height: auto;
-    background-color: silver;
-    border-style: solid;
-    border-color: darkblue;
-    border-radius: 15px;
+    
 }
-
-
 
 .container2 {
     max-width: 200px;
@@ -26,9 +18,14 @@ body {
     }
 
 .info {
-    position: ;
-	top:50%;
-	width: 100%;
-	color: #fff;
-    font-size: medium;
+    position: relative;
+    float: left;
+    max-width: 500px;
+    height: auto;
+    background-color: beige;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 50px;
 }
