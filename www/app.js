@@ -29,7 +29,7 @@ function getCity() {
 // Function that gets weather data from openweathermap
 function getWeather(city) {
     'use strict';
-    var weatherData = $.ajax("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=fc2cef4d05e5acca0565daf50456a1af");
+    var weatherData = $.ajax("http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=fc2cef4d05e5acca0565daf50456a1af");
     weatherData.then(function () {
         // console.log("In then", weatherData);
         //$("#weather").text(weatherData.responseText);
