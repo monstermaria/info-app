@@ -7,8 +7,28 @@ body {
     color: blue;
 }
 
+.containter{
+    position: relative;
+    max-width: 1000px;
+    height: auto;
+    background-color: silver;
+    border-style: solid;
+    border-color: darkblue;
+    border-radius: 15px;
+}
+
+
+
 .container2 {
-    max-width: 50px;
+    max-width: 200px;
     height: auto;
     background-color: yellow;  
     }
+
+.info {
+    position: ;
+	top:50%;
+	width: 100%;
+	color: #fff;
+    font-size: medium;
+}
