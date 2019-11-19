@@ -53,16 +53,16 @@ function getWeather(cityId) {
                 })();
 
 
-    var weather = $("#openweatermap-widget-15").html();
+    var weather = $("#openweatermap-widget-5").html();
     console.log(weather);
-    // $("#openweatermap-widget-15").html("");
+    // $("#openweatermap-widget-5").html("");
     // window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
     window.myWidgetParam =[{
-        id: 15,
+        id: 5,
         cityid: cityId,
         appid: 'fc2cef4d05e5acca0565daf50456a1af',
         units: 'metric',
-        containerid: 'openweathermap-widget-15'
+        containerid: 'openweathermap-widget-5'
     }];
 
     console.log(window.myWidgetParam);
