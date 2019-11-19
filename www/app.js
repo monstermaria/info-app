@@ -38,6 +38,7 @@ function sendWeather(weatherDataJSON) {
     console.log(weatherDataJSON);
 
     document.getElementById("weather").innerHTML = weatherDataJSON.main.temp;
+    
 }
 
 
@@ -54,4 +55,5 @@ function moreInfo(city) {
 
 $("#search-button").click(getCity);
 
-
+/*
+window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 15,cityid: '2643743',appid: 'fc2cef4d05e5acca0565daf50456a1af',units: 'metric',containerid: 'openweathermap-widget-15',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();*/
