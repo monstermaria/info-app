@@ -12,36 +12,31 @@ presents it in their corresponding divs on the homepage
 // Function to read input and call other functions that collect data
 function getCity() {
     'use strict';
+
     var city = $("#city").val();
-    // There will be function som gets weather for London
-    // I wrote only tests for checking 
-    if (city === "london") {
-        getWeather(city);
-    } else if (city === "paris") {
-        document.getElementById("test").innerHTML = "your choice: Paris (test)";
-    } else if (city === "copenhagen") {
-        document.getElementById("test").innerHTML = "your choice: Copenhagen (test)";
-    } else if (city === "stockholm") {
-        document.getElementById("test").innerHTML = "your choice: Stockholm (test)";
-    }
+
+    console.log(city);
+
+    getWeather(city);
+    moreInfo(city);
 }
 
 // Function that gets weather data from openweathermap
 function getWeather(city) {
     'use strict';
-    var weatherData = $.ajax("http://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&APPID=fc2cef4d05e5acca0565daf50456a1af");
-    weatherData.then(function () {
-        // console.log("In then", weatherData);
-        //$("#weather").text(weatherData.responseText);
-        sendWeather(weatherData.responseJSON);
-    });
-    console.log(weatherData);
+
+    var apiKey = "fc2cef4d05e5acca0565daf50456a1af";
+    var query = `?q=${city}&units=metric&APPID=${apiKey}`;
+    var url = `http://api.openweathermap.org/data/2.5/weather${query}`;
+
+    $.getJSON(url, sendWeather);
 }
 
 function sendWeather(weatherDataJSON) {
     'use strict';
+
     console.log(weatherDataJSON);
-    //var weatherObject = JSON.parse(weatherDataJSON);
+
     document.getElementById("weather").innerHTML = weatherDataJSON.main.temp;
     
 }
@@ -50,20 +45,13 @@ function sendWeather(weatherDataJSON) {
 // Function that reads JSON data from file
 function moreInfo(city) {
     'use strict';
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-        if (this.readyState === 4 && this.status === 200) {
-            document.getElementById("info").innerHTML = this.responseText;
-        }
-    };
-    xhttp.open("GET", "info.json", true);
-    xhttp.send();
 
-//var moreInfo = fs.readFile("info.json");
-    // data is a JavaScript object now. Handle it as such
+    $.getJSON("info.json", function (data) {
+        console.log("moreInfo", data);
+        $("#info").text(data[city]);
+    });
 }
 
-moreInfo();
 
 $("#search-button").click(getCity);
 
