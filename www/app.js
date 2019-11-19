@@ -42,7 +42,7 @@ function updateMap(coordinates) {
 function getWeather(cityId) {
     'use strict';
 
-<<<<<<< HEAD
+
     //console.log();    
     window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
     window.myWidgetParam.push({id: 5, cityid: city, appid: 'fc2cef4d05e5acca0565daf50456a1af', units: 'metric', containerid: 'openweathermap-widget-5'});
@@ -51,6 +51,7 @@ function getWeather(cityId) {
                  script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
                 })();
+
 
     var weather = $("#openweatermap-widget-15").html();
     console.log(weather);
