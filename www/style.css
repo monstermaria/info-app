@@ -19,7 +19,7 @@ body {
 
 .info {
     position: relative;
-    float: left;
+    /*float: left;*/
     max-width: 500px;
     height: auto;
     background-color: beige;
@@ -29,4 +29,15 @@ body {
     padding: 10px;
     margin: 50px;
 }
-#mapid { height: 180px; }
+#mapid { 
+    height: 300px;
+    width: 400px;
+
+ }
+
+
+
+
+
+
+

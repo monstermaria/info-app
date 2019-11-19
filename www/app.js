@@ -18,6 +18,27 @@ function getCity() {
     moreInfo(city);
 }
 
+function getMyMap(coordinates) {
+    console.log("getMyMap", coordinates);
+
+    mymap.setView(coordinates, 3);
+    if (marker) {
+        console.log("remove marker");
+        mymap.removeLayer(marker);
+    }
+    marker = L.marker(coordinates).addTo(mymap);
+
+}
+var mymap = L.map('mapid').setView([0, 0], 0);
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 15,
+    id: 'mapbox.streets',
+    accessToken: 'pk.eyJ1IjoiZ3JlZW55NzMiLCJhIjoiY2szNXFhY3B4MWVoeTNobzJ0cjBrenl1biJ9.82vZeA5kvvzOlk2lFXlXlw'
+}).addTo(mymap);
+// var marker = L.marker([0, 0]).addTo(mymap);
+var marker;
+
 
 // Function that reads JSON data from file
 function moreInfo(city) {
