@@ -14,11 +14,8 @@ function getCity() {
     'use strict';
 
     var city = $("#city").val();
-
-    console.log(city);
-    
+    //console.log(city);
     moreInfo(city);
-    
 }
 
 
@@ -27,9 +24,9 @@ function moreInfo(city) {
     'use strict';
 
     $.getJSON("info.json", function (data) {
-        console.log("moreInfo", data);
+        //console.log("moreInfo", data);
         var cityData = data[city];
-        console.log(cityData);
+        //console.log(cityData);
         sendWeather(cityData.weatherId);
         $("#info").text(cityData.infoText);
     });
@@ -51,23 +48,15 @@ function moreInfo(city) {
 function sendWeather(city) {
     'use strict';
 
-    console.log();
-
-    //document.getElementById("weather").innerHTML = weatherDataJSON.main.temp;
-    
+    //console.log();    
     window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
-    window.myWidgetParam.push({id: 15, cityid: city, appid: 'fc2cef4d05e5acca0565daf50456a1af',units: 'metric',containerid: 'openweathermap-widget-15',  });
-    (function() {var script = document.createElement('script');
-                 script.async = true;script.charset = "utf-8";
+    window.myWidgetParam.push({id: 15, cityid: city, appid: 'fc2cef4d05e5acca0565daf50456a1af', units: 'metric', containerid: 'openweathermap-widget-15'});
+    (function () {var script = document.createElement('script');
+                 script.async = true; script.charset = "utf-8";
                  script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
-                 var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);
+                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
                 })();
-    
 }
 
 
-
-
 $("#search-button").click(getCity);
-
-
