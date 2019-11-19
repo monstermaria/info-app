@@ -16,13 +16,28 @@ function getCity() {
     var city = $("#city").val();
 
     console.log(city);
-
-    sendWeather(city);
+    
     moreInfo(city);
+    
 }
 
+
+// Function that reads JSON data from file
+function moreInfo(city) {
+    'use strict';
+
+    $.getJSON("info.json", function (data) {
+        console.log("moreInfo", data);
+        var cityData = data[city];
+        console.log(cityData);
+        sendWeather(cityData.weatherId);
+        $("#info").text(cityData.infoText);
+    });
+}
+
+
 // Function that gets weather data from openweathermap
-function getWeather(city) {
+/*function getWeather(city) {
     'use strict';
 
     var apiKey = "fc2cef4d05e5acca0565daf50456a1af";
@@ -30,7 +45,8 @@ function getWeather(city) {
     var url = `http://api.openweathermap.org/data/2.5/weather${query}`;
 
     $.getJSON(url, sendWeather);
-}
+}*/
+
 
 function sendWeather(city) {
     'use strict';
@@ -50,16 +66,6 @@ function sendWeather(city) {
 }
 
 
-
-// Function that reads JSON data from file
-function moreInfo(city) {
-    'use strict';
-
-    $.getJSON("info.json", function (data) {
-        console.log("moreInfo", data);
-        $("#info").text(data[city]);
-    });
-}
 
 
 $("#search-button").click(getCity);
