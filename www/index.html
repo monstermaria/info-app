@@ -19,7 +19,8 @@
 </head>
 <body>
 	<center>
-	<span class="container">
+        
+	<span>
 		<h1 class="titel"> Info-app</h1>
 		<br>
 		<select id="city">
@@ -34,16 +35,24 @@
 		<br>
     </span>
         
-	<!--<div class="container2" id="weather"></div> -->
+        <br>
+		<br>
         
-	<div class="info" id="info"></div>
-        
-        <div id="openweathermap-widget-15"></div>
-        
-        <p id="test"></p>
-
-    <div id="mapid"></div>
-	</center>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="info" id="info">Welcome on Grit Angels Info-app! <br>Choose the city and enjoy your ride!</div>
+            </div>
+            <div class="column">
+                <div id="openweathermap-widget-15"></div>
+            </div>
+            <div class="column">
+                 <div class="mapid" id="mapid"></div>
+            </div>
+        </div>
+    </div>
+	
+    </center>
 	
 	<script src="app.js"></script>	
 </body>

@@ -8,32 +8,44 @@ body {
 }
 
 .containter{
-    
+    position: relative;
+    max-width: 1500px;
 }
 
-.container2 {
-    max-width: 200px;
-    height: auto;
-    background-color: yellow;  
-    }
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
 
 .info {
     position: relative;
-    /*float: left;*/
-    max-width: 500px;
+    max-width: 400px;
     height: auto;
     background-color: beige;
     border-style: solid;
     border-color: gray;
     border-radius: 10px;
     padding: 10px;
-    margin: 50px;
+    
 }
-#mapid { 
+.mapid {
+    position: relative;
     height: 300px;
-    width: 400px;
+    max-width: 400px;
+    
+}
 
- }
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
 
 
 
