@@ -19,11 +19,11 @@ function getCity() {
 }
 
 function getMyMap(coordinates) {
-    console.log("getMyMap", coordinates);
+    // console.log("getMyMap", coordinates);
 
     mymap.setView(coordinates, 3);
     if (marker) {
-        console.log("remove marker");
+        //console.log("remove marker");
         mymap.removeLayer(marker);
     }
     marker = L.marker(coordinates).addTo(mymap);
@@ -49,6 +49,7 @@ function moreInfo(city) {
         var cityData = data[city];
         //console.log(cityData);
         sendWeather(cityData.weatherId);
+        getMyMap(cityData.mapCoordinates);
         $("#info").text(cityData.infoText);
     });
 }
