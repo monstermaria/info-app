@@ -43,11 +43,15 @@ function updateMap(coordinates) {
 function getWeather(weatherId) {
     'use strict';
 
-    //var weather = $("#openweatermap-widget-5").html();
-    //console.log(weather);
+    // var weather = $("#openweatermap-widget-5").html();
+    // console.log(weather);
     // $("#openweatermap-widget-5").html("");
-    // window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
     
+    
+    // API call for several city IDs: 
+    // http://api.openweathermap.org/data/2.5/group?id=2643743,2988507,2618425,2673730&units=metric
+    
+    // window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
     window.myWidgetParam = [{
         id: 5,
         cityid: weatherId,
