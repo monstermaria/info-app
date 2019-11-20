@@ -14,6 +14,7 @@ var map, mapMarker;
 
 // Update map vith new coordinates
 function updateMap(coordinates) {
+    'use strict';
     // console.log("updateMap", coordinates);
 
     map.setView(coordinates, 3);
@@ -39,27 +40,28 @@ function updateMap(coordinates) {
 
 
 // Function that sets up a weather widget using data from openweathermap.org
-function getWeather(cityId) {
+function getWeather(weatherId) {
     'use strict';
 
 
     //console.log();    
-    window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
+    /*window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
     window.myWidgetParam.push({id: 5, cityid: city, appid: 'fc2cef4d05e5acca0565daf50456a1af', units: 'metric', containerid: 'openweathermap-widget-5'});
     (function () {var script = document.createElement('script');
-                 script.async = true; script.charset = "utf-8";
+                 script.async = true; 
+                 script.charset = "utf-8";
                  script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
-                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-                })();
-
+                 var s = document.getElementsByTagName('script')[0]; 
+                 s.parentNode.insertBefore(script, s);
+                })();*/
 
     var weather = $("#openweatermap-widget-5").html();
     console.log(weather);
     // $("#openweatermap-widget-5").html("");
     // window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
-    window.myWidgetParam =[{
+    window.myWidgetParam = [{
         id: 5,
-        cityid: cityId,
+        cityid: weatherId,
         appid: 'fc2cef4d05e5acca0565daf50456a1af',
         units: 'metric',
         containerid: 'openweathermap-widget-5'
@@ -69,7 +71,8 @@ function getWeather(cityId) {
 
     (function () {
         var script = document.createElement('script');
-        script.async = true; script.charset = "utf-8";
+        script.async = true;
+        script.charset = "utf-8";
         script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(script, s);
