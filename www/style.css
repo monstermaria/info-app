@@ -5,6 +5,8 @@ body {
 
 .titel{
     color: blue;
+    font-family: 'Kalam', cursive;
+    font-size: 50px;
 }
 
 .containter{
@@ -31,7 +33,9 @@ body {
     border-style: solid;
     border-color: gray;
     border-radius: 10px;
-    padding: 10px;  
+    padding: 10px;
+    font-family: 'Kalam', cursive;
+    font-size: 17px;
 }
 
 .mapid {
