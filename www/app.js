@@ -100,6 +100,12 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoiZ3JlZW55NzMiLCJhIjoiY2szNXFhY3B4MWVoeTNobzJ0cjBrenl1biJ9.82vZeA5kvvzOlk2lFXlXlw'
 }).addTo(map);
 
+function clearCityId (weatherId) {
+    weatherId = null;
+}
+
 
 // Add event listener to search button
 $("#search-button").click(getInfo);
+
+$("#clear-city-id").click(clearCityId);
