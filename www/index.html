@@ -25,7 +25,7 @@
 		<h1 class="titel"> Info-app</h1>
 		<br>
 		<select id="city">
-            <option value="0">Please select</option>
+            <option value="malmo">Please select</option>
             <option value="london">London</option>
             <option value="paris">Paris</option>
             <option value="copenhagen">Copenhagen</option>
@@ -47,6 +47,7 @@
             </div>
             <div class="column">
                 <div class="infoWeather" id="openweathermap-widget-5"></div>
+                <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 5,cityid: '2692969',appid: 'fc2cef4d05e5acca0565daf50456a1af',units: 'metric',containerid: 'openweathermap-widget-5',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
             </div>
             <div class="column">
                  <div class="mapid" id="mapid"></div>
