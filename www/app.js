@@ -70,6 +70,9 @@ function getWeather(weatherId) {
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(script, s);
     })();
+    
+    weatherId = null;
+    document.getElementById("openweathermap-widget-5").innerHTML = null;
 
     // cityid: weatherId - must refresh and update with new data next time when button "search" is clicked
 }
@@ -100,15 +103,15 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={
     accessToken: 'pk.eyJ1IjoiZ3JlZW55NzMiLCJhIjoiY2szNXFhY3B4MWVoeTNobzJ0cjBrenl1biJ9.82vZeA5kvvzOlk2lFXlXlw'
 }).addTo(map);
 
+// Add event listener to search button
+$("#search-button").click(getInfo);
+
 // function which clear weatherId
-function clearCityId(weatherId) {
+/*function clearCityId(weatherId) {
     'use strict';
     weatherId = null;
     document.getElementById("openweathermap-widget-5").innerHTML = null;
 }
 
-// Add event listener to search button
-$("#search-button").click(getInfo);
-
 // Add event listener to clear button
-$("#clear-city").click(clearCityId);
+$("#clear-city").click(clearCityId);*/
