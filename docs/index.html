@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="description" content="Info-app">
+	<meta name="author" content="Grit Angels">
+	<title>Info-app</title>
+
+	<link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+   integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+   crossorigin=""></script>
+	<script src="jquery-3.4.1.js"></script>
+
+</head>
+<body>
+    
+	<center>
+        
+	<span>
+		<h1 class="titel">INFO APP</h1>
+		
+		<select id="city">
+            <option value="malmo">Please select</option>
+            <option value="london">London</option>
+            <option value="paris">Paris</option>
+            <option value="copenhagen">Copenhagen</option>
+            <option value="stockholm">Stockholm</option>
+        </select>
+
+		<input type="button" id="search-button" value="search">
+		<br>
+		<br>
+    </span>
+        
+        <br>
+        
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <div class="info" id="info">Welcome on Grit Angels INFO APP! <br>Choose the city and enjoy your ride!</div>
+            </div>
+            <div class="column">
+                <div class="infoWeather" id="openweathermap-widget-5"></div>
+                <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];
+                    window.myWidgetParam.push({id: 5, cityid: '2692969', appid: 'fc2cef4d05e5acca0565daf50456a1af', units: 'metric', containerid: 'openweathermap-widget-5',  });
+                    (function() {var script = document.createElement('script');
+                                 script.async = true;
+                                 script.charset = "utf-8";
+                                 script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
+                                 var s = document.getElementsByTagName('script')[0];
+                                 s.parentNode.insertBefore(script, s);  })();</script>
+            </div>
+            <div class="column">
+                 <div class="mapid" id="mapid"></div>
+            </div>
+        </div>
+    </div>
+	
+    </center>
+	
+	<script src="app.js"></script>	
+</body>
+</html>

@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: powderblue;
+}
+
+.titel{
+    color: blue;
+    font-family: 'Kalam', cursive;
+    font-size: 50px;
+    text-shadow: 2px 2px 8px yellow;
+}
+
+.containter{
+    position: relative;
+    max-width: 1500px;
+    padding: 10px;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+.row:after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.info {
+    position: relative;
+    max-width: 400px;
+    height: auto;
+    background-color: beige;
+    border-style: solid;
+    border-color: gray;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: 'Kalam', cursive;
+    font-size: 17px;
+}
+
+.mapid {
+    position: relative;
+    height: 300px;
+    max-width: 400px;   
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
