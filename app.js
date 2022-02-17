@@ -52,14 +52,15 @@ function getWeather(weatherId) {
   }];
 
   // add a new script tag that loads the new widget
-  // TODO: use jQuery instead of document.doSomething...
-  // TODO: remove the previous script, to avoid having multiple copies in the document head
   (function () {
-    var script = document.createElement('script');
-    script.async = true;
-    script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(script, s);
+    // remove the previous script, to avoid having multiple copies in the document head
+    $('script[src="//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js"]').remove();
+
+    // create and add the new script tag to head
+    var script = $('<script>');
+    script.attr('async', '');
+    script.attr('src', '//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js');
+    script.appendTo('head');
   })();
 }
 
