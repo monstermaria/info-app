@@ -17,7 +17,7 @@ function updateMap(coordinates) {
     'use strict';
     // console.log("updateMap", coordinates);
 
-    map.setView(coordinates, 3);
+    map.setView(coordinates, 11);
     if (mapMarker) {
         //console.log("remove mapMarker");
         map.removeLayer(mapMarker);
@@ -95,14 +95,17 @@ function getInfo() {
 
 
 // Set up map
-map = L.map('mapid').setView([0, 0], 0);
-L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 15,
-    id: 'mapbox.streets',
-    accessToken: 'pk.eyJ1IjoiZ3JlZW55NzMiLCJhIjoiY2szNXFhY3B4MWVoeTNobzJ0cjBrenl1biJ9.82vZeA5kvvzOlk2lFXlXlw'
-}).addTo(map);
+map = L.map('mapid').setView([55.583, 13.0333], 11);
+mapMarker = L.marker([55.583, 13.0333]).addTo(map);
 
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+attribution: '© <a href="https://www.mapbox.com/about/maps/">Mapbox</a> © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> <strong><a href="https://www.mapbox.com/map-feedback/" target="_blank">Improve this map</a></strong>',
+tileSize: 512,
+maxZoom: 18,
+zoomOffset: -1,
+id: 'mapbox/streets-v11',
+accessToken: 'pk.eyJ1IjoiZ3JlZW55NzMiLCJhIjoiY2szNXFhY3B4MWVoeTNobzJ0cjBrenl1biJ9.82vZeA5kvvzOlk2lFXlXlw'
+}).addTo(map);
 // Add event listener to search button
 $("#search-button").click(getInfo);
 
