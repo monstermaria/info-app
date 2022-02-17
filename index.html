@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="description" content="Info-app">
+  <meta name="author" content="Grit Angels">
+  <title>Info-app</title>
+
+  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+  <script src="jquery-3.4.1.js"></script>
+
+</head>
+
+<body>
+
+  <center>
+
+    <span>
+      <h1 class="titel">INFO APP</h1>
+
+      <select id="city">
+        <option value="malmo">Please select</option>
+        <option value="london">London</option>
+        <option value="paris">Paris</option>
+        <option value="copenhagen">Copenhagen</option>
+        <option value="stockholm">Stockholm</option>
+      </select>
+
+      <input type="button" id="search-button" value="search">
+      <br>
+      <br>
+    </span>
+
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="column">
+          <div class="info" id="info">Welcome on Grit Angels INFO APP! <br>Choose the city and enjoy your ride!</div>
+        </div>
+        <div class="column">
+          <div class="infoWeather" id="openweathermap-widget-5"></div>
+        </div>
+        <div class="column">
+          <div class="mapid" id="mapid"></div>
+        </div>
+      </div>
+    </div>
+
+  </center>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
